@@ -1,0 +1,12 @@
+{
+  "name": "oakwood-server-win",
+  "pkg": {
+    "targets": [
+      "node12-win-x64"
+    ],
+    "assets": [
+      "../assets/oakwood-server-win.exe",
+      "../node_modules/nanomsg/build/Release/node_nanomsg.foolpkg"
+    ]
+  }
+}

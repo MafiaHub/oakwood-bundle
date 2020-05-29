@@ -1,0 +1,12 @@
+{
+  "name": "oakwood-server-lin",
+  "pkg": {
+    "targets": [
+      "node12-linux-x64"
+    ],
+    "assets": [
+      "../assets/oakwood-server-lin",
+      "../node_modules/nanomsg/build/Release/node_nanomsg.foolpkg"
+    ]
+  }
+}

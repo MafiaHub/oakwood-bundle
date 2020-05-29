@@ -1,0 +1,32 @@
+{
+  "name": "oakwood-server",
+  "version": "1.0.0",
+  "description": "",
+  "author": "inlife",
+  "scripts": {
+    "beforebuild": "renamer -f .node -r .foolpkg **/*.node && node src/pre.js win",
+    "afterbuild": "renamer -f .foolpkg -r .node **/*.foolpkg",
+    "postinstall": "patch-package",
+    "pkg-win": "npm run beforebuild && pkg src/bin.js -c assets/config-win.json --out-path bin/ && npm run afterbuild",
+    "pkg-lin": "npm run beforebuild && pkg src/bin.js -c assets/config-lin.json --out-path bin/ && npm run afterbuild",
+    "pkg-mac": "npm run beforebuild && pkg src/bin.js -c assets/config-mac.json --out-path bin/ && npm run afterbuild",
+    "start": "node src/bin.js"
+  },
+  "bin": {
+    "oakwood-server": "src/bin.js"
+  },
+  "license": "ISC",
+  "dependencies": {
+    "@nexrender/core": "^1.16.2",
+    "fs-extra": "^9.0.0",
+    "oakwood": "^2.3.1"
+  },
+  "devDependencies": {
+    "node-fetch": "^2.6.0",
+    "node-fetch-progress": "^1.0.2",
+    "patch-package": "^6.2.2",
+    "pkg": "^4.4.0",
+    "postinstall-postinstall": "^2.1.0",
+    "renamer": "^2.0.0"
+  }
+}

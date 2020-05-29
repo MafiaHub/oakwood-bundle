@@ -1,0 +1,12 @@
+{
+  "name": "oakwood-server-mac",
+  "pkg": {
+    "targets": [
+      "node13-macos-x64"
+    ],
+    "assets": [
+      "../assets/oakwood-server-mac",
+      "../node_modules/nanomsg/build/Release/node_nanomsg.foolpkg"
+    ]
+  }
+}

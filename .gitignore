@@ -1,0 +1,4 @@
+node_modules/
+bin/
+
+assets/oakwood-server-*
