@@ -49,7 +49,6 @@ const check = sys => new Promise((resolve, reject) => {
 const main = async () => {
     const system = SYSTEM;
     await check(system)
-    console.log('lol')
     await exec(['src/bin.js', '-c', `assets/config-${system}.json`, '--out-path', 'bin/'])
 }
 
