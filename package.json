@@ -4,12 +4,10 @@
   "description": "",
   "author": "inlife",
   "scripts": {
-    "beforebuild": "renamer -f .node -r .foolpkg **/*.node && node src/pre.js win",
+    "beforebuild": "renamer -f .node -r .foolpkg **/*.node",
     "afterbuild": "renamer -f .foolpkg -r .node **/*.foolpkg",
-    "postinstall": "patch-package",
-    "pkg-win": "npm run beforebuild && pkg src/bin.js -c assets/config-win.json --out-path bin/ && npm run afterbuild",
-    "pkg-lin": "npm run beforebuild && pkg src/bin.js -c assets/config-lin.json --out-path bin/ && npm run afterbuild",
-    "pkg-mac": "npm run beforebuild && pkg src/bin.js -c assets/config-mac.json --out-path bin/ && npm run afterbuild",
+    "pkg": "npm run beforebuild && node src/pkg.js && npm run afterbuild",
+    "postinstall": "node_modules/.bin/patch-package",
     "start": "node src/bin.js"
   },
   "bin": {

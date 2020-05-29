@@ -2,6 +2,8 @@ const fs = require('fs')
 const path = require('path')
 const fetch = require('node-fetch')
 const nfp = require('node-fetch-progress')
+const {exec} = require('pkg')
+const {SYSTEM} = require('./consts')
 
 const url = 'https://releases.mafiahub.now.sh/api/fetch/mafiahub/oakwood/{PLATFORM}/server/latest'
 const exe = 'oakwood-server'
@@ -13,7 +15,7 @@ const check = sys => new Promise((resolve, reject) => {
 
     /* resolve ! */
     if (fs.existsSync(binary)) {
-        return binary;
+        return resolve(binary);
     }
 
     console.log(`> starting download for ${sys}: ${fileurl}`)
@@ -45,11 +47,10 @@ const check = sys => new Promise((resolve, reject) => {
 })
 
 const main = async () => {
-    const system = process.argv[2]
-    const systems = ['win', 'lin', 'mac']
-    if (systems.indexOf(system) == -1)
-        throw new Error('Invalid system provided')
-    return await check(system)
+    const system = SYSTEM;
+    await check(system)
+    console.log('lol')
+    await exec(['src/bin.js', '-c', `assets/config-${system}.json`, '--out-path', 'bin/'])
 }
 
 main().catch(console.error)
