@@ -1,4 +1,7 @@
 #!/usr/bin/env node
+
+const workdir = process.cwd()
+
 require('./bootstrap').then(async () => {
     const os = require('os')
     const fs = require('fs')
@@ -15,6 +18,7 @@ require('./bootstrap').then(async () => {
             : path.join('./assets/', EXECUTABLE)
 
         console.log('> using binary', binary)
+        console.log('> current working directory', workdir)
 
         if (!fs.existsSync(binary)) {
             throw new Error('Binary was not found in the package')
@@ -34,7 +38,7 @@ require('./bootstrap').then(async () => {
         const oak = createClient()
 
         const params = []
-        const instance = spawn(binary, params, { stdio: 'inherit', cwd: process.cwd() });
+        const instance = spawn(binary, params, { stdio: 'inherit', cwd: workdir });
 
         /* call gamemode code */
         gamemode(oak)
