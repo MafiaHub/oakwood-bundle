@@ -34,7 +34,7 @@ require('./bootstrap').then(async () => {
         const oak = createClient()
 
         const params = []
-        const instance = spawn(binary, params, { stdio: 'inherit' });
+        const instance = spawn(binary, params, { stdio: 'inherit', cwd: process.cwd() });
 
         /* call gamemode code */
         gamemode(oak)
