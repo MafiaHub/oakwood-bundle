@@ -25,7 +25,7 @@ require('./bootstrap').then(async () => {
         }
 
         const customScriptName = 'index.js';
-        const customScript = path.join(process.cwd(), customScriptName)
+        const customScript = path.join(workdir, customScriptName)
 
         if (fs.existsSync(customScript)) {
             console.log('> using custom gamemode script', customScript)
