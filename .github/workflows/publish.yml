@@ -1,0 +1,40 @@
+name: Publish
+
+on:
+  push:
+    tags:
+      - '*'
+
+jobs:
+  publish:
+    name: Publish for ${{ matrix.os }}
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        node-version: [12.x]
+        include:
+          - os: ubuntu-latest
+            artifact_name: ./bin/oakwood-server-lin
+            asset_name: oakwood-server-lin
+          - os: windows-latest
+            artifact_name: ./bin/oakwood-server-win.exe
+            asset_name: oakwood-server-win.exe
+          - os: macos-latest
+            artifact_name: ./bin/oakwood-server-mac
+            asset_name: oakwood-server-mac
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: Use Node.js ${{ matrix.node-version }}
+      uses: actions/setup-node@v1
+      with:
+        node-version: ${{ matrix.node-version }}
+    - run: npm ci
+    - run: npm pkg-win
+    - name: Upload binaries to release
+      uses: svenstaro/upload-release-action@v1-release
+      with:
+        repo_token: ${{ secrets.GITHUB_TOKEN }}
+        file: target/release/${{ matrix.artifact_name }}
+        asset_name: ${{ matrix.asset_name }}
+        tag: ${{ github.ref }}
