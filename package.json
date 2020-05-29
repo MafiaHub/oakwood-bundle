@@ -8,7 +8,8 @@
     "afterbuild": "renamer -f .foolpkg -r .node **/*.foolpkg",
     "pkg": "npm run beforebuild && node src/pkg.js && npm run afterbuild",
     "postinstall": "node_modules/.bin/patch-package",
-    "start": "node src/bin.js"
+    "start": "node src/bin.js",
+    "release": "release-it"
   },
   "bin": {
     "oakwood-server": "src/bin.js"
@@ -25,6 +26,12 @@
     "patch-package": "^6.2.2",
     "pkg": "^4.4.0",
     "postinstall-postinstall": "^2.1.0",
+    "release-it": "^13.6.1",
     "renamer": "^2.0.0"
+  },
+  "release-it": {
+    "github": {
+      "release": true
+    }
   }
 }
