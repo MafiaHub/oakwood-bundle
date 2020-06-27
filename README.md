@@ -75,4 +75,9 @@ module.exports = (oak) => {
 }
 ```
 
-For more details, please 
+> Note: to get list of player models, please [follow this link](https://github.com/MafiaHub/oakwood-node/blob/master/src/playerModels.js)
+
+> Note: to get list of vehicle models, please [follow this link](https://github.com/MafiaHub/oakwood-node/blob/master/src/vehicleModels.js)
+
+For more details, please refer to the original [MafiaHub/oakwood-node](https://github.com/MafiaHub/oakwood-node) repository.
+Additionally, feel free to create an issue with questions/suggestions/bug reports/etc.
