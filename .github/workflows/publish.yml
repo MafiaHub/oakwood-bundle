@@ -13,14 +13,14 @@ jobs:
       matrix:
         include:
           - os: ubuntu-latest
-            artifact_name: ./bin/oakwood-server-lin
-            asset_name: oakwood-server-lin
+            artifact_name: ./bin/oakwood-bundle-lin
+            asset_name: oakwood-bundle-lin
           - os: windows-latest
-            artifact_name: ./bin/oakwood-server-win.exe
-            asset_name: oakwood-server-win.exe
+            artifact_name: ./bin/oakwood-bundle-win.exe
+            asset_name: oakwood-bundle-win.exe
           - os: macos-latest
-            artifact_name: ./bin/oakwood-server-mac
-            asset_name: oakwood-server-mac
+            artifact_name: ./bin/oakwood-bundle-mac
+            asset_name: oakwood-bundle-mac
 
     steps:
     - uses: actions/checkout@v2

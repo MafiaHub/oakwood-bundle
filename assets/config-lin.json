@@ -1,5 +1,5 @@
 {
-  "name": "oakwood-server-lin",
+  "name": "oakwood-bundle-lin",
   "pkg": {
     "targets": [
       "node12-linux-x64"

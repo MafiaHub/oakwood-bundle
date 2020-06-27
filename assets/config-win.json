@@ -1,5 +1,5 @@
 {
-  "name": "oakwood-server-win",
+  "name": "oakwood-bundle-win",
   "pkg": {
     "targets": [
       "node12-win-x64"

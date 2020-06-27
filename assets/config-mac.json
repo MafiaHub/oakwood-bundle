@@ -1,5 +1,5 @@
 {
-  "name": "oakwood-server-mac",
+  "name": "oakwood-bundle-mac",
   "pkg": {
     "targets": [
       "node13-macos-x64"

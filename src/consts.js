@@ -13,7 +13,7 @@ switch (process.platform) {
 }
 
 module.exports = {
-    TEMPDATA: path.join(os.tmpdir(), 'oakwood-server'),
+    TEMPDATA: path.join(os.tmpdir(), 'oakwood-bundle'),
     EXECUTABLE: `oakwood-server-${SYSTEM=='win'?'win.exe':SYSTEM}`,
     SYSTEM,
     IS_PACKAGED,

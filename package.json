@@ -1,5 +1,5 @@
 {
-  "name": "oakwood-server",
+  "name": "oakwood-bundle",
   "version": "1.0.6",
   "description": "",
   "author": "inlife",
@@ -12,7 +12,7 @@
     "release": "release-it"
   },
   "bin": {
-    "oakwood-server": "src/bin.js"
+    "oakwood-bundle": "src/bin.js"
   },
   "license": "ISC",
   "dependencies": {

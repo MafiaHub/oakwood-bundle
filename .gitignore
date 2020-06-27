@@ -4,3 +4,4 @@ assets/oakwood-server-*
 
 config/
 server.log
+.DS_store

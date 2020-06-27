@@ -1,6 +1,6 @@
-# oakwood-server
+# oakwood-bundle
 
-A single, self-contained binary that is able to run oakwood server with a default [freeride](https://github.com/mafiahub/oakwood-freeride) gamemode.
+A single, self-contained packaged binary that is able to run oakwood server with a default [freeride](https://github.com/mafiahub/oakwood-freeride) gamemode.
 
 ## Instructions
 
