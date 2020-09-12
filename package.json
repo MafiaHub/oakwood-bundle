@@ -21,7 +21,7 @@
     "oakwood": "^2.3.1"
   },
   "devDependencies": {
-    "node-fetch": "^2.6.0",
+    "node-fetch": "^2.6.1",
     "node-fetch-progress": "^1.0.2",
     "patch-package": "^6.2.2",
     "pkg": "^4.4.0",
